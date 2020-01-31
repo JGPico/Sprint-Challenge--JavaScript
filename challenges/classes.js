@@ -34,6 +34,23 @@ console.log(cuboid2.surfaceArea()); // 130
 class CubeMaker extends CuboidMakerC {
     constructor(attrs) {
         super(attrs);
+        this.edge = attrs.edge;
     } // end constructor
-    
+
+    volume() {
+        let cubeVolume = Math.pow(this.edge, 3);
+        return cubeVolume;
+    } // end volume
+
+    surfaceArea() {
+        let cubeArea = 6 * Math.pow(this.edge, 2);
+        return cubeArea;
+    } // end surfaceArea
 } // end CubeMaker
+
+let cube = new CubeMaker({
+    edge: 5
+})
+
+console.log(cube.volume() + ' = stretch volume');
+console.log(cube.surfaceArea() + ' = stretch surface area');
