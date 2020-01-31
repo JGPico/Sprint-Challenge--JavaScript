@@ -95,17 +95,8 @@ console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 let subString = "Uni";
-const unisWithUni = universities.map(function(element){
-  if (element.includes(subString)) {
-    return element;
-  }
-});
 
-unisWithUni.sort();
-
-for (let i = 0; i < 5; i++) {
-  unisWithUni.pop();
-}
+const unisWithUni = universities.filter(element => element.includes(subString));
 
 console.log(unisWithUni);
 
